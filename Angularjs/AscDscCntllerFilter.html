@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Angularjs custom Filter Example</title>
+    <script src="angular.min.js"></script>
+    <script type="text/javascript">
+           var app=angular.module('customFilterApp',[]);          
+app.controller("MyCtrl",function($scope){
+  $scope.names=["ram","shyam","aman"];
+  $scope.click=function(){
+     $scope.flag=!$scope.flag;
+     return $scope.flag;
+  }
+ }
+  );
+
+    app.filter('orderByCustomFilter',function(){
+          return function(item,flag){
+            var array;
+            
+           
+            if(flag==true){
+              array=item.sort();
+            }
+            else{
+                    array=item.sort().reverse()
+                 }             
+                   
+               
+                   return array
+              }
+
+                 });
+
+
+
+      </script>
+      </head>
+  <body ng-app="customFilterApp" ng-controller="MyCtrl" ng-int="flag=false"> 
+     <input type="button" value= "toggle" ng-click="click()" >
+     
+  <p ng-repeat="name in names|orderByCustomFilter:flag">
+
+      {{name}}
+    
+    </p>
+  </body>
+</html>

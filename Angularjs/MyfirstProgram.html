@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript">
+		function f1(){
+			var name=document.getElementById("name").value;
+			document.getElementById("get").value=name;
+			document.getElementById("sample").innerHTML=name;
+		}
+	</script>
+</head>
+<body>
+	<form>
+		Name : <input type="text" name="id" id="name">
+		<input type="button" onclick="f1()">
+		Result : <input type="text" name="" id="get">
+		<div id="sample">
+		</div>
+	</form>
+</body>
+</html>

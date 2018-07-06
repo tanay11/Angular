@@ -1,0 +1,30 @@
+<html>
+<head>
+<script src="D:\Angularjs\angular.min.js"></script>
+<script type="text/javascript">
+	var app=angular.module("myFirstApp",[]);
+	app.controller("customCntrl",function($scope,calcservice){
+		$scope.FindSqrt=function(){
+			 
+			return calcservice.sqrt($scope.value);
+		}
+
+	});
+	app.service("calcservice",function(){
+			this.sqrt=function(a){
+				return Math.sqrt(a);
+			}
+	});
+</script>
+</head>
+<body ng-app="myFirstApp" ng-controller="customCntrl">
+	Enter a Number<input type="number" name="" ng-model="value">
+	<p>
+		SQUARE ROOT : {{FindSqrt()}}
+	</p>
+	
+
+
+
+</body>
+</html>

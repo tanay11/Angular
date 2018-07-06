@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="angular.min.js"></script>
+		<script>var app=angular.module("myApp",[]);
+		app.controller("myctrl",function($scope){
+			$scope.display=function(){
+				alert($scope.name);
+			}
+			$scope.value=100;
+		});
+		
+	</script>
+</head>
+<body ng-App="myApp" ng-controller="myctrl" ng-init="name='Ram'">
+	{{display()}}
+	{{value}}
+</body>
+</html>

@@ -1,0 +1,49 @@
+<html>
+<head>
+<script src="D:\Angularjs\angular.min.js"></script>
+<script type="text/javascript">
+	var app=angular.module("myFirstApp",[]);
+	app.controller("customCntrl",function($scope,calcservice){
+
+		$scope.FindFaren=function(){
+			 $scope.ans=calcservice.faren($scope.value);
+			return calcservice.faren($scope.value);
+		}
+
+		$scope.FindCelcius=function(){
+			 $scope.ans=calcservice.celcius($scope.value);
+			return calcservice.celcius($scope.value);
+		}
+
+	});
+
+	app.service("calcservice",function(){
+			this.faren=function(f){
+				
+				var c=(5*(f-32))/9;
+				return c;
+			}
+
+			this.celcius=function(c){
+				
+				var f=((9*c)/5)+32;
+				return f;
+			}
+	});
+</script>
+</head>
+<body ng-app="myFirstApp" ng-controller="customCntrl" ng-init="ans=0">
+	Enter temperature<input type="number" name="" ng-model="value">
+	<p>
+		<input type="button" name="" value="celcius" ng-click="FindFaren()"><br><br>
+		<input type="button" name="" value="Farenhite" ng-click="FindCelcius()">
+		<input type="text" name="" ng-model="ans">
+
+	</p>
+
+	
+
+
+
+</body>
+</html>

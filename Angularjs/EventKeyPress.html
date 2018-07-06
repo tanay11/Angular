@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="angular.min.js"></script>
+		<script> var app=angular.module("myApp",[]);
+		app.controller("myctrl",function($scope){
+			
+			$scope.display=function(event){
+					$scope.key=event.keyCode;
+			}
+			
+		});
+		
+	</script>
+</head>
+<body ng-App="myApp" ng-controller="myctrl">
+	
+	<input type="text" ng-keydown="display($event)">
+	
+	<input type="text" name="" ng-model="key"> 
+	
+	 
+	
+	
+</body>
+</html>

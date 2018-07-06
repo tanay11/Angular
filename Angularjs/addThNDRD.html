@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="angular.min.js"></script>
+<script>
+var app = angular.module('filters', []);
+
+app.filter("print", function(){
+  return function(n){
+    
+     var str=["th","st","nd","rd"];
+     var add="";
+     var r1=n%100;
+     var a=r1/10;
+     if(a!=1)
+     {
+     	alert(a);
+     	if(a>3)
+     	{
+     		add=str[0];
+     	}
+     	else
+     	{
+     		add=str[a];
+     	}
+     }
+     else{
+  
+     		add=str[0];
+     	
+     	
+     }
+     return n+add;
+    }
+  }
+)
+</script>
+</head>
+   
+	<body ng-app="filters"  >
+<input type="text" ng-model="value">
+       {{value|print}}
+   
+	
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="angular.min.js">
+		
+	</script>
+</head>
+<body ng-App="" ng-init="employee=[{empid:'e1001',ename:'ram'},{empid:'e1002',ename:'raj'}]">
+	<table border=2px>
+		<tr>
+			<th>
+				EmpId
+			</th>
+			<th>
+				Empname
+			</th>
+		</tr>
+
+		<tr>
+			<td>
+				{{employee[0].empid}}
+			</td>
+			<td>
+				{{employee[0].ename}}
+			</td>
+		</tr>
+		<tr>
+			<td>
+				{{employee[1].empid}}
+			</td>
+			<td>
+				{{employee[1].ename}}
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

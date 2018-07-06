@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="angular.min.js"></script>
+<script>
+var app = angular.module('filters', []);
+
+app.filter('CustomOrderBy', function(){
+  return function(str){
+      var arr=str.split(" ");
+      var brr=arr.sort;
+      return brr;
+    }
+  }
+)
+</script>
+</head>
+   
+	<body ng-app="filters" ng-init='str="how are you"' >
+<!--<input type="text" ng-model="result">-->
+      
+   
+{{str|CustomOrderBy}}
+	</body>
+</html>

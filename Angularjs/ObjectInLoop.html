@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="angular.min.js">
+		
+	</script>
+</head>
+<body ng-App="" ng-init="employee=[{empid:001,ename:'C'},{empid:002,ename:'A'},{empid:003,ename:'B'}]">
+	
+		<table border="2px"> 
+			<tr>
+				<th>EmpId</th>
+				<th>Empname</th>
+			</tr>
+			
+				<tr ng-repeat="employee in employee|orderBy:'ename':false">
+					<td>
+						{{employee.empid}}
+						
+					</td>
+					<td>
+						{{employee.ename}}
+						
+					</td>
+					
+				</tr>
+		</table>
+
+</body>
+</html>

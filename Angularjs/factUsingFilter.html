@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="angular.min.js"></script>
+		<script> var app=angular.module("myApp",[]);
+				app.filter("factorial",function(){
+					return function(input){
+						var fact=input;
+						for(var i=fact-1;i> 1;i--)
+						{
+							fact=fact*i;
+						}
+						return fact;
+					}
+				})
+		
+	</script>
+</head>
+<body ng-App="myApp" >
+	<h3>
+		Please enter number</h3>
+	<input type="number" ng-model="value" />
+	{{value|factorial}}
+
+	 
+	
+	
+</body>
+</html>

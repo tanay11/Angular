@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="angular.min.js"></script>
+		<script> var app=angular.module("myApp",[]);
+		app.controller("myctrl",function($scope){
+			$scope.squareRoot=function(){
+				return Math.sqrt($scope.value);
+			}
+			
+		});
+		
+	</script>
+</head>
+<body ng-App="myApp" ng-controller="myctrl">
+	Enter The Number : <input type="number" name="" ng-model="value"><br>
+	Square Root of {{value}} : {{squareRoot()}}
+	
+</body>
+</html>

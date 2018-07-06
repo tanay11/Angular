@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="angular.min.js"></script>
+		<script> var app=angular.module("myApp",[]);
+				app.filter("HypenHtaa",function(){
+					return function(input){
+						var str=""+input;
+						for(var i=0;i<str.length;i++)
+						{
+							if(str.charAt(i)=='-')
+								{
+									str.charAt(i)=' ';
+
+								}
+								else{
+									continue;
+								}
+						}
+						return str;
+						/*var str = input.replace(/-/g, ' ');
+						return str;*/
+					}
+				})
+		
+	</script>
+</head>
+<body ng-App="myApp" >
+	<h3>
+		Please enter string</h3>
+	<input type="text" ng-model="value" />
+	{{value|HypenHtaa}}
+
+	 
+	
+	
+</body>
+</html>
